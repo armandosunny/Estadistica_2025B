@@ -21,6 +21,7 @@ Verificar los supuestos estadísticos en cada análisis.
 ## PCA
 
 Preguntas:
+<img width="148" height="148" alt="snoopy" src="https://github.com/user-attachments/assets/a4c5293a-9508-4062-af2a-486be0ea79d6" />
 
 ¿Cuántos componentes explican la mayor parte de la varianza (>70%)?
 
