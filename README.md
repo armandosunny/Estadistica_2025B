@@ -47,6 +47,9 @@ Preguntas:
 
 ## Modelos Lineales
 
+<img width="900" height="750" alt="LM" src="https://github.com/user-attachments/assets/50f3edfd-665c-49d0-ad90-350f92d222cd" />
+
+
 Preguntas:
 
 ¿Cuál(es) variable(s) predicen significativamente el rendimiento?
