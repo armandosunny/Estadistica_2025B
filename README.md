@@ -2,7 +2,7 @@
 repositorio de  la clasae de estadistica 
 
 
-Objetivo general
+# Objetivo general
 
 Aprender a:
 
@@ -18,7 +18,7 @@ Verificar los supuestos estadísticos en cada análisis.
 
 
 
-##PCA
+## PCA
 
 Preguntas:
 
@@ -28,7 +28,7 @@ Preguntas:
 
 ¿Qué conclusiones biológicas puedes sacar del PCA?
 
-##Correlaciones 
+## Correlaciones 
 
 
 Preguntas:
@@ -40,7 +40,7 @@ Preguntas:
 ¿Cómo se relacionan los resultados con el PCA?
 
 
-##Modelos Lineales
+## Modelos Lineales
 
 Preguntas:
 
