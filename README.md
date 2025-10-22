@@ -31,6 +31,7 @@ Preguntas:
 
 ## Correlaciones 
 
+usar el paquete de R de ggstatsplot: https://indrajeetpatil.github.io/ggstatsplot/
 
 Preguntas:
 
