@@ -32,6 +32,8 @@ Preguntas:
 
 ## Correlaciones 
 
+<img width="2100" height="1200" alt="LINEAL" src="https://github.com/user-attachments/assets/5a5e0f72-bd05-4732-a844-0c49ec5885cb" />
+
 usar el paquete de R de ggstatsplot: https://indrajeetpatil.github.io/ggstatsplot/
 
 Preguntas:
