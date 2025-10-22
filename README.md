@@ -4,7 +4,7 @@ repositorio de  la clasae de estadistica
 
 # Objetivo general
 
-Aprender a:
+
 
 Explorar y comprender datos biotecnológicos con muchas variables.
 
