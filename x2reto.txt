@@ -1,0 +1,101 @@
+INSTRUCTIVO: ANÁLISIS DE ASOCIACIÓN ENTRE VARIABLES CATEGÓRICAS EN R
+(Chi-cuadrado, Fisher, McNemar y Cochran Q)
+
+------------------------------------------------------------
+📘 OBJETIVO
+------------------------------------------------------------
+Evaluar si existe una relación entre dos o más variables categóricas mediante pruebas estadísticas
+de independencia, y representar los resultados gráficamente en R.
+
+------------------------------------------------------------
+📂 PASO 1. CARGA DE DATOS
+------------------------------------------------------------
+1. Descarga el archivo: Datos_ChiCuadrado_Biotecnologia.csv
+2. Guarda el archivo en tu carpeta de trabajo en R.
+3. Carga los datos con el siguiente código:
+
+    
+
+4. Explora la estructura y resumen de los datos:
+    str(datos)
+    summary(datos)
+
+
+------------------------------------------------------------
+🧩 PASO 3. CREAR TABLAS DE CONTINGENCIA
+------------------------------------------------------------
+   
+
+Estas tablas muestran las frecuencias observadas entre categorías.
+
+------------------------------------------------------------
+🧠 PASO 4. COMPROBAR SUPUESTOS
+------------------------------------------------------------
+1. Las observaciones deben ser independientes.
+2. Los valores esperados en cada celda deben ser ≥ 5.
+
+
+Si alguna celda tiene valores esperados < 5, usa la prueba de Fisher.
+
+------------------------------------------------------------
+🧮 PASO 5. PRUEBA DE CHI-CUADRADO (χ²)
+------------------------------------------------------------
+  
+
+Interpreta el resultado:
+- H₀: Las variables son independientes.
+- H₁: Las variables están asociadas.
+Si p < 0.05 → Rechaza H₀.
+
+------------------------------------------------------------
+🧭 PASO 6. PRUEBA DE FISHER (SI HAY CELDAS < 5)
+------------------------------------------------------------
+    
+
+La prueba de Fisher se usa cuando los tamaños de muestra son pequeños.
+
+------------------------------------------------------------
+🔁 PASO 7. PRUEBAS PARA DATOS PAREADOS
+------------------------------------------------------------
+1. **Prueba de McNemar** (para dos mediciones relacionadas):
+
+   
+
+2. **Prueba de Cochran’s Q** (para más de dos mediciones relacionadas):
+
+   
+------------------------------------------------------------
+📈 PASO 8. VISUALIZACIÓN CON GGBARSTATS
+------------------------------------------------------------
+    library(ggstatsplot)
+    
+
+------------------------------------------------------------
+📏 PASO 9. CALCULAR TAMAÑO DEL EFECTO (Cramer's V)
+------------------------------------------------------------
+   
+
+Cramer's V mide la fuerza de la asociación:
+- 0.1 = débil
+- 0.3 = moderada
+- 0.5 o más = fuerte
+
+------------------------------------------------------------
+📊 PASO 10. INTERPRETACIÓN FINAL
+------------------------------------------------------------
+1. Si p < 0.05 → hay evidencia de asociación entre las variables.
+2. Evalúa la magnitud con Cramer's V.
+3. Verifica si los supuestos del test se cumplen.
+4. Reporta resultados en formato APA, por ejemplo:
+
+
+
+------------------------------------------------------------
+✅ RESULTADO FINAL
+------------------------------------------------------------
+Los estudiantes habrán aprendido a:
+- Cargar y preparar datos categóricos.
+- Comprobar supuestos de las pruebas de independencia.
+- Aplicar las pruebas χ², Fisher, McNemar y Cochran Q.
+- Calcular tamaños de efecto.
+- Visualizar resultados con ggbarstats.
