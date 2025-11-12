@@ -1,0 +1,88 @@
+TEST CHI-CUADRADO (χ²)
+-----------------------------------------------------------------------
+
+ INTRODUCCIÓN
+El test de Chi-cuadrado (χ²) es una prueba estadística no paramétrica que permite evaluar si existe
+una relación o asociación entre dos variables categóricas. Sin embargo, para que sus resultados sean
+válidos, deben cumplirse ciertos supuestos fundamentales.
+
+-----------------------------------------------------------------------
+SUPUESTOS DEL TEST CHI-CUADRADO
+-----------------------------------------------------------------------
+
+1. **Independencia de las observaciones**
+   - Cada observación o individuo debe pertenecer a una sola categoría en cada variable.
+   - Ejemplo: una cepa bacteriana solo puede registrarse una vez en cada tipo de antibiótico.
+
+    Si las observaciones están emparejadas (por ejemplo, antes y después del tratamiento en el mismo individuo),
+   NO se debe usar el test χ² clásico.
+
+    En ese caso, se debe usar la **Prueba de McNemar** o la **Prueba de Cochran Q**.
+
+-----------------------------------------------------------------------
+
+2. **Tamaño de muestra adecuado**
+   - La muestra debe ser suficientemente grande para aproximar bien la distribución Chi-cuadrado.
+
+-----------------------------------------------------------------------
+
+3. **Frecuencias esperadas mínimas**
+   - Todas las celdas de la tabla de contingencia deben tener un valor esperado ≥ 5.
+   - Si más del 20% de las celdas tienen frecuencias esperadas < 5, el test χ² puede ser inexacto.
+
+   Para comprobarlo en R:
+       test <- chisq.test()
+       test$expected
+
+-----------------------------------------------------------------------
+ ¿QUÉ HACER SI LOS SUPUESTOS NO SE CUMPLEN?
+-----------------------------------------------------------------------
+
+1. **Si hay celdas con valores esperados < 5:**
+   - Usa la **Prueba exacta de Fisher**.
+   - Esta prueba calcula la probabilidad exacta de obtener una distribución igual o más extrema
+     que la observada, sin depender de aproximaciones.
+
+   En R:
+       fisher.test()
+
+-----------------------------------------------------------------------
+
+2. **Si los datos son pareados (antes/después o mediciones repetidas):**
+   - Usa la **Prueba de McNemar** cuando hay solo dos categorías (por ejemplo, “Presente/Ausente”).
+
+   En R:
+       mcnemar.test()
+
+-----------------------------------------------------------------------
+
+3. **Si hay más de dos mediciones pareadas o relacionadas:**
+   - Usa la **Prueba de Cochran’s Q**, que extiende McNemar a más de dos momentos o condiciones.
+
+   En R:
+       install.packages("RVAideMemoire")
+       library(RVAideMemoire)
+       cochran.qtest(cbind(var1, var2, var3) ~ 1, data = datos)
+
+-----------------------------------------------------------------------
+ RESUMEN DE ELECCIÓN DE PRUEBAS
+-----------------------------------------------------------------------
+
+| Tipo de datos o condición                     | Prueba recomendada        |
+|-----------------------------------------------|----------------------------|
+| Dos variables categóricas independientes      | Chi-cuadrado (χ²)         |
+| Dos variables categóricas con celdas < 5      | Fisher exact test         |
+| Datos pareados con 2 mediciones (pre/post)    | McNemar test              |
+| Datos pareados con > 2 mediciones             | Cochran’s Q test          |
+
+-----------------------------------------------------------------------
+ 
+Antes de aplicar cualquier prueba, deben:
+- Verificar los supuestos con tablas de contingencia y valores esperados.
+- Interpretar los resultados con criterio estadístico y biológico.
+- Recordar que la significancia estadística no siempre implica una relación causal.
+
+-----------------------------------------------------------------------
+
+El éxito del test χ² depende más del cumplimiento de sus supuestos que del tamaño de la muestra.
+Por ello, es fundamental evaluar las condiciones de aplicación antes de interpretar los resultados.
